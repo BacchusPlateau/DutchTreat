@@ -1,0 +1,16 @@
+{
+  "ConnectionStrings": {
+    "DutchConnectionString": "Server=(localdb)\\ProjectsV13;Database=DutchTreatDb;Integrated Security=True;MultipleActiveResultSets=true"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "Tokens": {
+    "Key": "awef9(DGF)9e99ejkeaflj##$#",
+    "Issuer": "Aeschinder Resources",
+    "Audience": "The World"
+  }
+}
