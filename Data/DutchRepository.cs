@@ -70,12 +70,12 @@ namespace DutchTreat.Data
                 .ToList();
         }
 
-        public Order GetOrderById(int id)
+        public Order GetOrderById(string username, int id)
         {
             return ctx.Orders
                 .Include(o => o.Items)
                 .ThenInclude(i => i.Product)
-                .Where(o => o.Id == id)
+                .Where(o => o.Id == id && o.User.UserName == username)
                 .FirstOrDefault();
         }
 

@@ -9,6 +9,7 @@ using DutchTreat.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.Extensions.Logging;
@@ -23,16 +24,19 @@ namespace DutchTreat.Controllers
         private readonly IDutchRepository dutchRepository;
         private readonly ILogger<ProductsController> logger;
         private readonly IMapper mapper;
+        private readonly UserManager<StoreUser> userManager;
 
         public OrdersController(
             IDutchRepository dutchRepository, 
             ILogger<ProductsController> logger,
-            IMapper mapper
+            IMapper mapper,
+            UserManager<StoreUser> userManager
             )
         {
             this.dutchRepository = dutchRepository;
             this.logger = logger;
             this.mapper = mapper;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -60,7 +64,7 @@ namespace DutchTreat.Controllers
         {
             try
             {
-                var order = dutchRepository.GetOrderById(id);
+                var order = dutchRepository.GetOrderById(User.Identity.Name, id);
 
                 if (order != null)
                 {
@@ -79,7 +83,7 @@ namespace DutchTreat.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]OrderViewModel model) 
+        public async Task<IActionResult> Post([FromBody]OrderViewModel model) 
         {
             try
             {
@@ -92,7 +96,11 @@ namespace DutchTreat.Controllers
                         order.OrderDate = DateTime.Now;
                     }
 
+                    var currentUser = await userManager.FindByNameAsync(User.Identity.Name);
+                    order.User = currentUser;
+
                     dutchRepository.AddEntity(order);
+
                     if (dutchRepository.SaveAll())
                     {
                         return Created($"/api/orders/{order.Id}", mapper.Map<Order, OrderViewModel>(order));

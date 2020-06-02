@@ -418,6 +418,7 @@ C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\bin\
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\bin\Debug\netcoreapp3.1\tsconfig.json
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\obj\Debug\netcoreapp3.1\DutchTreat.csproj.CoreCompileInputs.cache
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\obj\Debug\netcoreapp3.1\DutchTreat.MvcApplicationPartsAssemblyInfo.cs
 C:\dox\code\tutorials\dotnetMvcEntityBootstrapAngular\BigProject\DutchTreat\obj\Debug\netcoreapp3.1\DutchTreat.MvcApplicationPartsAssemblyInfo.cache

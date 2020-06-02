@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hCvFMa6v4pMmqu5ZvxqljIWKapjqohaxZ3kfLwTdaFKcVa5W6Jenkm8nA12YkSjgGW21HM21hx+GzdkjyADL1Q==",
+  "dgSpecHash": "GJsOS8xGKBv2xpOF1o5BVjwGBEYCmKEeVj3tgD5vTnRBy0m2vY2Ikr9RzYAsXtFoUQqj/t+m46fP4uy9lh+T8Q==",
   "success": true,
   "projectFilePath": "C:\\dox\\code\\tutorials\\dotnetMvcEntityBootstrapAngular\\BigProject\\DutchTreat\\DutchTreat.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,7 @@
     "C:\\Users\\strai\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\strai\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\strai\\.nuget\\packages\\microsoft.typescript.msbuild\\3.9.2\\microsoft.typescript.msbuild.3.9.2.nupkg.sha512",
     "C:\\Users\\strai\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.0.0\\microsoft.visualstudio.web.codegeneration.3.0.0.nupkg.sha512",
     "C:\\Users\\strai\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.0.0\\microsoft.visualstudio.web.codegeneration.contracts.3.0.0.nupkg.sha512",
     "C:\\Users\\strai\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.0.0\\microsoft.visualstudio.web.codegeneration.core.3.0.0.nupkg.sha512",
