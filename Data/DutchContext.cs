@@ -1,6 +1,7 @@
 ﻿using DutchTreat.Data.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,28 +34,37 @@ namespace DutchTreat.Data
 
     public class DutchContext : IdentityDbContext<StoreUser>
     {
-        public DutchContext(DbContextOptions<DutchContext> options): base(options)
-        {
-
-        }
+        public static readonly ILoggerFactory MyLoggerFactory
+         = LoggerFactory.Create(builder => { builder.AddConsole(); });
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
 
+        public DutchContext(DbContextOptions<DutchContext> options): base(options)
+        {
+          
+        }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options
+                .UseLoggerFactory(MyLoggerFactory)
+                .EnableSensitiveDataLogging();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Order>()
-                .HasData(new Order()
-                {
-                    Id = 1,
-                    OrderDate = DateTime.UtcNow,
-                    OrderNumber = "12345"
-                });
-            
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<OrderItem>()
+                .Property(p => p.UnitPrice)
+                .HasColumnType("decimal(18,2)");
+
         }
 
         

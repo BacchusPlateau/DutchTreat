@@ -44,9 +44,23 @@ namespace DutchTreat.Data
 
         public IEnumerable<Order> GetAllOrdersByUser(string username, bool includeItems)
         {
-            
-            var orders = GetAllOrders(includeItems).Where(orders => orders.User != null && orders.User.UserName == username);
-            return orders;
+            if (includeItems)
+            {
+                var orders = ctx.Orders
+                    .Where(o => o.User.UserName == username)
+                    .Include(o => o.Items)
+                    .ThenInclude(i => i.Product)
+                    .ToList();
+
+                return orders;
+
+            } else
+            {
+                return ctx.Orders
+                   .Where(o => o.User.UserName == username)
+                   .ToList();
+
+            }
         }
 
         public IEnumerable<Product> GetAllProducts()

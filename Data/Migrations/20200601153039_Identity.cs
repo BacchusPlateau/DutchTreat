@@ -159,10 +159,6 @@ namespace DutchTreat.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Orders",
-                columns: new[] { "Id", "OrderDate", "OrderNumber", "UserId" },
-                values: new object[] { 1, new DateTime(2020, 6, 1, 15, 30, 38, 546, DateTimeKind.Utc).AddTicks(6100), "12345", null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserId",
